@@ -1,4 +1,4 @@
-?WORK_WCAS_DATA_CLASS <- read.csv("~/Documents/ECON/Big Data/WORK_WCAS_DATA_CLASS.csv", stringsAsFactors= FALSE)
+WORK_WCAS_DATA_CLASS <- read.csv("~/Documents/ECON/Big Data/WORK_WCAS_DATA_CLASS.csv", stringsAsFactors= FALSE)
 
 #install.packages("tidyr") 
 
