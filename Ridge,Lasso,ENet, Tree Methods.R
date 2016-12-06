@@ -71,6 +71,28 @@ print(rmse_elastic)
 library(rpart)
 colnames(Boston)
 # grow tree 
+treefit <- rpart(crim~ medv + zn + indus + chas + nox + rm + age + dis + rad + tax + ptratio + black + lstat,
+             method="anova", data=Boston)
+
+printcp(treefit) # display the results
+# Variables actually used in tree construction:
+#  [1] crim  dis   lstat rm   
+#
+# Root node error: 42716/506 = 84.42
+
+plotcp(treefit) # visualize cross-validation results 
+summary(treefit) # detailed summary of splits
+# n-506
+#Node number 20: 193 observations
+#mean=21.65648, MSE=8.23738 
+
+# plot tree 
+plot(treefit, uniform=TRUE, 
+     main="Classification Tree for Boston")
+text(treefit, use.n=TRUE, all=TRUE, cex= 1)
+library(rpart)
+colnames(Boston)
+# grow tree 
 treefit <- rpart(medv ~ crim + zn + indus + chas + nox + rm + age + dis + rad + tax + ptratio + black + lstat,
              method="anova", data=Boston)
 
